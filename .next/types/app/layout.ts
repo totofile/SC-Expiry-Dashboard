@@ -1,4 +1,4 @@
-// File: /home/toplu/Bureau/GitHub/SC-Expiry-Dashboard/app/layout.tsx
+// File: C:\Users\theophile.faugeras\OneDrive - Magellan Partners\Bureau\GitHub\SC-Expiry-Dashboard\app\layout.tsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
