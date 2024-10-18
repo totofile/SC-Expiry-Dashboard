@@ -1,0 +1,9 @@
+.github/workflows/ # Ignore GitHub Actions workflows
+.gitignore
+Dockerfile
+node_modules
+npm-debug.log
+.dockerignore
+.git
+.gitignore
+README.md
