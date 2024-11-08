@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy Node.js app to Azure Web App - SC-Expiry-Dashboard
+name: Build and deploy Node.js app to Azure Web App - faugerastest
 
 on:
   push:
@@ -57,15 +57,15 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_4701E38F30FD430D96BAEB57AF4A221F }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_B61414CB138846BF9F7EB8E62DCC0FFC }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_95F12A2BBB2E4359A290179E61769964 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_B7DEE5F227784AD8BB81B6639B1BF9E6 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_D3B7F00A546E427BAAA1471DBE3B3813 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_ADA503A6300B4E29B6E0FC6418D9C7A6 }}
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'SC-Expiry-Dashboard'
+          app-name: 'faugerastest'
           slot-name: 'Production'
           package: .
           
