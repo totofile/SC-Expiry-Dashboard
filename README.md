@@ -1,3 +1,29 @@
+Implémentation dans un environnement azure
+
+1. Enregistrer une application https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app
+
+2. Une fois l'application enregistré autoriser les api suivantes 
+
+
+3. Dans le volet app registration / Authentication 
+Renseignez le lien (hostname de la static web app) dans redirect URIs exemple "https://sc-expiry-dashboard.azurewebsites.net"
+
+
+4. FORK le répertoire GitHub -> https://github.com/totofile/SC-Expiry-Dashboard
+
+5. Modifier le fichier compoennts/auth.tsx avec vos informations d'identification d'application 
+
+
+6. Executer la ligne PowerShell suivante ou bien créer votre static web app à la main en liant le déploiement à votre dépot github celui de l'app que vous avez fork : 
+az staticwebapp create  -n <webAppName> -g <RgName> -l <WebApp_location> -s <SourceRepository>  -b <GitBranch> -t <Your_developper_GH_Token_for_azure> 
+
+7. Pour autoriser des utilisateurs
+Placez des utilisateurs dans entreprisse apps -> users and groups
+
+
+
+## Si vous voulez apporter des modification à l'application 
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
