@@ -1,12 +1,12 @@
 # Implémentation dans un environnement azure
 
-## 1. Enregistrer une application https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app
+## 1. [Enregistrer une application](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app)
 
 ## 2. Une fois l'application enregistré autoriser les api suivantes 
 ![image](https://github.com/user-attachments/assets/8688a65a-87eb-478e-b9fd-5aaab084f548)
 
 ## 3. Dans le volet app registration / Authentication 
-Renseignez le lien (hostname de la static web app) dans redirect URIs exemple "https://sc-expiry-dashboard.azurewebsites.net"
+Renseignez le lien (hostname de la static web app) dans redirect URIs exemple 'https://sc-expiry-dashboard.azurewebsites.net'
 ![image](https://github.com/user-attachments/assets/dedf2a95-06c8-47af-a7eb-cc735621b3e8)
 
 
