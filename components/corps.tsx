@@ -142,14 +142,17 @@ const Corps: React.FC = () => {
                 flex: 1,
                 resizable: true,
                 sortable: true,
-                filter: 'agNumberColumnFilter',
-                cellClassRules: {
-                    'bg-red-500 text-white': 'x < 0',
-                    'bg-orange-500 text-black': 'x >= 0 && x <= 30',
-                    'bg-green-500 text-white': 'x > 30'
-                }
+                filter: 'agNumberColumnFilter'
             },
         ];
+    };
+
+    const getRowClassRules = () => {
+        return {
+            'bg-red-500 text-white': 'data.daysToExpiry < 0',
+            'bg-orange-500 text-black': 'data.daysToExpiry >= 0 && data.daysToExpiry <= 30',
+            'bg-green-500 text-white': 'data.daysToExpiry > 30'
+        };
     };
 
     if (loading) {
@@ -177,6 +180,7 @@ const Corps: React.FC = () => {
                         domLayout='autoHeight'
                         pagination={true}
                         paginationPageSize={10}
+                        rowClassRules={getRowClassRules()}
                     />
                 </div>
             </div>
