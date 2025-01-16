@@ -147,12 +147,15 @@ const Corps: React.FC = () => {
         ];
     };
 
-    const getRowClassRules = () => {
-        return {
-            'bg-red-500 text-white': 'data.daysToExpiry < 0',
-            'bg-orange-500 text-black': 'data.daysToExpiry >= 0 && data.daysToExpiry <= 30',
-            'bg-green-500 text-white': 'data.daysToExpiry > 30'
-        };
+    const getRowStyle = (params: any) => {
+        const daysToExpiry = params.data.daysToExpiry;
+        if (daysToExpiry < 0) {
+            return { backgroundColor: '#fecaca', color: 'black' };
+        } else if (daysToExpiry >= 0 && daysToExpiry <= 30) {
+            return { backgroundColor: '#fed7aa', color: 'black' };
+        } else {
+            return { backgroundColor: '#bbf7d0', color: 'black' };
+        }
     };
 
     if (loading) {
@@ -180,7 +183,7 @@ const Corps: React.FC = () => {
                         domLayout='autoHeight'
                         pagination={true}
                         paginationPageSize={10}
-                        rowClassRules={getRowClassRules()}
+                        getRowStyle={getRowStyle}
                     />
                 </div>
             </div>
