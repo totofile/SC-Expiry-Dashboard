@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from 'react';
-import { useRouter }from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { InteractionType, PublicClientApplication, AuthenticationResult } from '@azure/msal-browser';
 import { Client } from '@microsoft/microsoft-graph-client';
 import { AuthCodeMSALBrowserAuthenticationProvider } from '@microsoft/microsoft-graph-client/authProviders/authCodeMsalBrowser';
@@ -25,7 +25,7 @@ const Corps: React.FC = () => {
         } else {
             setLoading(false);
         }
-    }, [isAuth,daysToExpiry]);
+    }, [isAuth, daysToExpiry]);
 
     const fetchData = async () => {
         if (!publicClientAppRef.current) return;
@@ -73,7 +73,7 @@ const Corps: React.FC = () => {
         applications.forEach(app => {
             const appWithSecrets = appsWithSecrets.find(a => a.id === app.id) || { secrets: [] };
             const appWithCertificates = appsWithCertificates.find(a => a.id === app.id) || { certificates: [] };
-    
+
             appWithSecrets.secrets.forEach((secret: any) => {
                 if (calculateDaysToExpiry(secret.endDateTime) <= daysToExpiry) {
                     flattened.push({
@@ -85,7 +85,7 @@ const Corps: React.FC = () => {
                     });
                 }
             });
-    
+
             appWithCertificates.certificates.forEach((cert: any) => {
                 if (calculateDaysToExpiry(cert.endDateTime) <= daysToExpiry) {
                     flattened.push({
@@ -101,14 +101,6 @@ const Corps: React.FC = () => {
         return flattened;
     };
 
-    if (loading) {
-        return <div>Loading...</div>;
-    }
-
-    if (!isAuth) {
-        router.push('/');
-        return null;
-    }
     const getColumnDefs = () => {
         return [
             {
@@ -135,7 +127,6 @@ const Corps: React.FC = () => {
                 flex: 1,
                 resizable: true
             },
-
             {
                 headerName: "End Date",
                 field: "endDateTime",
@@ -151,11 +142,24 @@ const Corps: React.FC = () => {
                 flex: 1,
                 resizable: true,
                 sortable: true,
-                filter: 'agNumberColumnFilter'
+                filter: 'agNumberColumnFilter',
+                cellClassRules: {
+                    'bg-red-500 text-white': 'x < 0',
+                    'bg-orange-500 text-black': 'x >= 0 && x <= 30',
+                    'bg-green-500 text-white': 'x > 30'
+                }
             },
-
         ];
     };
+
+    if (loading) {
+        return <div>Loading...</div>;
+    }
+
+    if (!isAuth) {
+        router.push('/');
+        return null;
+    }
 
     return (
         <div>
