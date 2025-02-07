@@ -6,7 +6,7 @@
 
 ![image](https://github.com/user-attachments/assets/8688a65a-87eb-478e-b9fd-5aaab084f548)
 
-## 3. In the app registration / Authenticatio
+## 3. In the app registration / Authentication
 Enter the link (hostname of the static web app) in redirect URIs example 'https://sc-expiry-dashboard.azurewebsites.net'
 
 ![image](https://github.com/user-attachments/assets/dedf2a95-06c8-47af-a7eb-cc735621b3e8)
