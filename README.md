@@ -1,3 +1,6 @@
+# Dashboard to follow secrets and certificate expiration on Azure !
+![image](https://github.com/user-attachments/assets/930a74b9-2ad3-430a-ba98-4b8deea215b0)
+
 # Implementation in an Azure environment
 
 ## 1. [Register an Application](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app)
